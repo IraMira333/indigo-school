@@ -1,25 +1,30 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import js from "@eslint/js";
+import nextPlugin from "@next/eslint-plugin-next";
+import tseslint from "typescript-eslint";
+import prettier from "eslint-plugin-prettier";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
+import unusedImports from "eslint-plugin-unused-imports";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+export default tseslint.config(
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+  nextPlugin.configs["core-web-vitals"],
   {
-    ignores: [
-      "node_modules/**",
-      ".next/**",
-      "out/**",
-      "build/**",
-      "next-env.d.ts",
-    ],
-  },
-];
-
-export default eslintConfig;
+    plugins: {
+      prettier,
+      "simple-import-sort": simpleImportSort,
+      "unused-imports": unusedImports,
+    },
+    rules: {
+      "prettier/prettier": "warn",
+      "unused-imports/no-unused-imports": "warn",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        { vars: "all", args: "after-used", ignoreRestSiblings: true },
+      ],
+      "simple-import-sort/imports": "warn",
+      "simple-import-sort/exports": "warn",
+    },
+    ignores: ["node_modules", ".next", "out", "build"],
+  }
+);
