@@ -1,10 +1,13 @@
 @import "tailwindcss";
 
 :root {
+
     --background: #ffffff;
     --foreground: #171717;
+
 }
 @theme inline {
+
     /* 🎨 Кольори */
     --color-black-custom: #0a0a0a;
     --color-blue-custom: #0d2098;
@@ -39,4 +42,5 @@ body {
 .no-scroll {
     overflow: hidden !important;
     height: 100% !important;
+
 }
