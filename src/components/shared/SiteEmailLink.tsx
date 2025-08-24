@@ -1,12 +1,16 @@
-import { EmailContent } from "@/types";
+import { EmailContent } from "@/types/contentTypes";
 
 interface SiteEmailLinkProps {
-  emailData: EmailContent;
+    emailData: EmailContent;
 }
 export const SiteEmailLink = ({ emailData }: SiteEmailLinkProps) => {
-  return (
-    <a href={`mailto:${emailData.to}`} target="_blank" className="underline">
-      {emailData.text}
-    </a>
-  );
+    return (
+        <a
+            href={`mailto:${emailData.to}`}
+            target="_blank"
+            className="underline"
+        >
+            {emailData.text}
+        </a>
+    );
 };
