@@ -1,6 +1,6 @@
 import { DocumentType } from "@/types/contentTypes";
 
-const siteUrl = process.env.SITE || "http://localhost:3001";
+const siteUrl = process.env.NEXT_PUBLIC_SITE || "http://localhost:3001";
 const email = "TODOk@gmail.com";
 
 export const publicOferta: DocumentType = {
