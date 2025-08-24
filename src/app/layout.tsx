@@ -1,3 +1,5 @@
+import { Footer } from "@/components/footer/Footer";
+import { Header } from "@/components/header/Header";
 import type { Metadata } from "next";
 import { Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
@@ -25,7 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} ${open.variable} `}>
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
