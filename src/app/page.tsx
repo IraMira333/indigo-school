@@ -1,6 +1,8 @@
 import { AdvantagesList } from "@/components/advantages/AdvantagesList";
+import { Article } from "@/components/article/Article";
 import { CTA } from "@/components/CTA/CTA";
-import { ctaDiscount } from "@/components/data/ctaContent";
+import { article } from "@/components/data/article";
+import { ctaDiscount, ctaTrial } from "@/components/data/ctaContent";
 import { DetailsList } from "@/components/details/DetailsList";
 import { Hero } from "@/components/hero/Hero";
 
@@ -11,6 +13,8 @@ export default function Home() {
             <AdvantagesList />
             <DetailsList />
             <CTA cta={ctaDiscount} />
+            <Article article={article} />
+            <CTA cta={ctaTrial} />
         </>
     );
 }
