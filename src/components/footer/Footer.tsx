@@ -1,7 +1,6 @@
 import { Menu } from "../header/Menu";
 import { IconLogo } from "../shared/icons/IconLogo";
 import { PrivacyPolicy } from "./PrivacyPolicy";
-import { PublicOferta } from "./PublicOferta";
 import { SocialList } from "./SocialList";
 import { UpButton } from "./UpButton";
 
@@ -16,7 +15,7 @@ export const Footer = () => {
                         <IconLogo />
                     </div>
                     <div className="pc:mb-9 mb-8">
-                        <h3 className="font-alumni text-txligth pc:mb-4 mx-auto mb-[23px] w-fit text-[18px] leading-none font-bold uppercase">
+                        <h3 className="pc:mb-4 mx-auto mb-[23px] w-fit text-[18px] leading-none font-bold uppercase">
                             Навігація
                         </h3>
                         <nav role="navigation">
@@ -27,7 +26,7 @@ export const Footer = () => {
                 <SocialList />
             </div>
             <div className="pc:px-6 pc:pt-12 relative border-t px-4 pt-8">
-                <div className="pc:ml-0 pc:max-w-[calc(50%+87px)] pc:flex-row pc:justify-between pc:gap-24 relative mx-auto flex max-w-[500px] flex-col gap-4">
+                <div className="pc:ml-0 pc:max-w-[calc(50%+87px)] pc:flex-row pc:justify-between pc:gap-24 relative mx-auto flex flex-col gap-4">
                     <div>
                         <p className="pc:mb-5 mb-4 text-xs leading-none uppercase">
                             &copy; 2025 Всі права захищені
@@ -46,13 +45,8 @@ export const Footer = () => {
                             </a>
                         </div>
                     </div>
-                    <div>
-                        <div className="mb-3 leading-none">
-                            <PrivacyPolicy policyButton="Політика конфіденційності" />
-                        </div>
-                        <div className="leading-none">
-                            <PublicOferta oferta="Публічна оферта" />
-                        </div>
+                    <div className="mb-3 leading-none">
+                        <PrivacyPolicy policyButton="Політика конфіденційності" />
                     </div>
                     <div className="pc:hidden absolute right-0 bottom-0">
                         <UpButton />
