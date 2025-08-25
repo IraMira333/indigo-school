@@ -12,15 +12,11 @@ const Navbar = () => {
         setIsHeaderMenuOpened(!isHeaderMenuOpened);
 
     useEffect(() => {
-        if (isHeaderMenuOpened) {
-            const timer = setTimeout(() => {
-                document.body.style.overflow = "hidden";
-            }, 590);
+        document.body.style.overflow = isHeaderMenuOpened ? "hidden" : "";
 
-            return () => clearTimeout(timer);
-        } else {
+        return () => {
             document.body.style.overflow = "";
-        }
+        };
     }, [isHeaderMenuOpened]);
 
     return (

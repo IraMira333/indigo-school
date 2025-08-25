@@ -24,6 +24,7 @@ export const Menu = ({
                 <li key={item.name} className="group uppercase">
                     <a
                         href={`#${item.path}`}
+                        onClick={() => handleLinkClick(`#${item.path}`)}
                         className="transition-opacity duration-300 ease-in-out group-hover:opacity-70"
                     >
                         {item.name}
