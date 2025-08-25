@@ -6,38 +6,35 @@ import { MenuBurgerButton } from "./MenuBurgerButton";
 import { MobileMenu } from "./MobileMenu";
 
 const Navbar = () => {
-  const [isHeaderMenuOpened, setIsHeaderMenuOpened] = useState(false);
+    const [isHeaderMenuOpened, setIsHeaderMenuOpened] = useState(false);
 
-  const toggleHeaderMenuOpen = () => setIsHeaderMenuOpened(!isHeaderMenuOpened);
+    const toggleHeaderMenuOpen = () =>
+        setIsHeaderMenuOpened(!isHeaderMenuOpened);
 
-  useEffect(() => {
-    if (isHeaderMenuOpened) {
-      const timer = setTimeout(() => {
-        document.body.style.overflow = "hidden";
-      }, 590);
+    useEffect(() => {
+        document.body.style.overflow = isHeaderMenuOpened ? "hidden" : "";
 
-      return () => clearTimeout(timer);
-    } else {
-      document.body.style.overflow = "";
-    }
-  }, [isHeaderMenuOpened]);
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [isHeaderMenuOpened]);
 
-  return (
-    <>
-      <div className="pc:hidden">
-        <MenuBurgerButton
-          isHeaderMenuOpened={isHeaderMenuOpened}
-          toggleHeaderMenuOpen={toggleHeaderMenuOpen}
-        />
-      </div>
-      <MobileMenu
-        isHeaderMenuOpened={isHeaderMenuOpened}
-        setIsHeaderMenuOpened={setIsHeaderMenuOpened}
-      />
+    return (
+        <>
+            <div className="pc:hidden">
+                <MenuBurgerButton
+                    isHeaderMenuOpened={isHeaderMenuOpened}
+                    toggleHeaderMenuOpen={toggleHeaderMenuOpen}
+                />
+            </div>
+            <MobileMenu
+                isHeaderMenuOpened={isHeaderMenuOpened}
+                setIsHeaderMenuOpened={setIsHeaderMenuOpened}
+            />
 
-      <Menu className="hidden pc:flex pc:gap-5 " />
-    </>
-  );
+            <Menu className="pc:flex pc:gap-5 pc:text-xl hidden font-semibold" />
+        </>
+    );
 };
 
 export default Navbar;
