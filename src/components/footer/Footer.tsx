@@ -46,27 +46,28 @@ export const Footer = () => {
             <div className="pc:px-6 pc:pt-12 relative border-t px-4 pt-8">
                 <div className="pc:ml-0 pc:max-w-[calc(50%+87px)] pc:flex-row pc:justify-between pc:gap-24 relative mx-auto flex max-w-[500px] flex-col gap-4">
                     <div>
-                        <p className="text-txligth pc:mb-6 mb-4 text-xs leading-none uppercase">
+                        <p className="text-txligth pc:mb-5 mb-4 text-xs leading-none uppercase">
                             &copy; 2025 Всі права захищені
                         </p>
-                        <div className="flex gap-[11px]">
-                            <p className="text-txligth text-xs leading-none uppercase">
+                        <div className="flex gap-2">
+                            <p className="text-xs leading-none uppercase">
                                 Розробка сайту
                             </p>
                             <a
                                 href={IrynaTrynkal}
                                 target="_blank"
                                 rel="noreferrer"
+                                className="text-xs leading-none font-semibold uppercase transition-all duration-300 ease-in-out hover:underline"
                             >
                                 Ірина Тринкаль
                             </a>
                         </div>
                     </div>
                     <div>
-                        <div className="mb-3">
+                        <div className="mb-3 leading-none">
                             <PrivacyPolicy policyButton="Політика конфіденційності" />
                         </div>
-                        <div>
+                        <div className="leading-none">
                             <PublicOferta oferta="Публічна оферта" />
                         </div>
                     </div>
