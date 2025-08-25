@@ -1,0 +1,39 @@
+import { AdvantageCard } from "./AdvantageCard";
+
+const advantages = [
+    {
+        title: "Онлайн чи офлайн - вибір за вами",
+        description: "Вчіться там, де зручно: у школі чи з дому",
+        icon: "/icon1.png",
+    },
+    {
+        title: "Формат для кожного",
+        description: "Індивідуально або у міні-групі до 10 людей",
+        icon: "/icon1.png",
+    },
+    {
+        title: "Зручний графік",
+        description: "Два рази на тиждень по 60 хвилин",
+        icon: "/icon1.png",
+    },
+    {
+        title: "Перший крок безкоштовно",
+        description: "Приходьте на пробний урок і відчуйте атмосферу Indigo",
+        icon: "/icon1.png",
+    },
+];
+
+export const AdvantagesList = () => {
+    return (
+        <section
+            id="advantages"
+            className="pc:pt-20 pc:pb-32 pc:px-10 pc:text-lg -mt-6 px-4 pb-20 text-sm"
+        >
+            <ul className="flex flex-wrap justify-center gap-5">
+                {advantages.map((adv, index) => (
+                    <AdvantageCard key={index} advantage={adv} />
+                ))}
+            </ul>
+        </section>
+    );
+};
