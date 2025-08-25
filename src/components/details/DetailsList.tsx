@@ -40,7 +40,10 @@ const details = [
 ];
 export const DetailsList = () => {
     return (
-        <section id="course" className="pc:pb-16 pc:px-10 px-4 pb-12">
+        <section
+            id="course"
+            className="pc:pb-16 pc:px-10 overflow-hidden px-4 pb-12"
+        >
             <h2 className="font-montserrat mb-6 max-w-[300px] text-4xl font-semibold">
                 Детальніше про навчання
             </h2>
