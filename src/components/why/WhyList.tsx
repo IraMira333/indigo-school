@@ -16,7 +16,7 @@ export const WhyList = () => {
                         key={index}
                     >
                         <img
-                            src="/pin.jpg"
+                            src="/pin.svg"
                             alt={why}
                             className="pc:h-12 pc:w-12 h-10 w-10"
                         />

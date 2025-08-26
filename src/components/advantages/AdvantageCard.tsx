@@ -13,7 +13,7 @@ export const AdvantageCard = ({
                 alt={advantage.title}
                 width={240}
                 height={240}
-                className="pc:h-16 pc:w-16 h-12 w-12 flex-shrink-0"
+                className="pc:h-20 pc:w-20 h-16 w-16 flex-shrink-0"
             />
             <div>
                 <h3 className="font-montserrat pc:text-2xl font-semibold">

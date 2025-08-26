@@ -26,7 +26,7 @@ export const DetailsCard = ({
                     alt={detail.title}
                     width={240}
                     height={240}
-                    className="pc:h-16 pc:w-16 h-12 w-12"
+                    className="pc:h-32 pc:w-32 h-24 w-24"
                 />
                 <h3 className="font-montserrat pc:text-3xl text-xl font-semibold">
                     {detail.title}

@@ -4,22 +4,22 @@ const advantages = [
     {
         title: "Онлайн чи офлайн - вибір за вами",
         description: "Вчіться там, де зручно: у школі чи з дому",
-        icon: "/icon1.png",
+        icon: "/everywhere.svg",
     },
     {
         title: "Формат для кожного",
         description: "Індивідуально або у міні-групі до 10 людей",
-        icon: "/icon1.png",
+        icon: "/everyone.svg",
     },
     {
         title: "Зручний графік",
         description: "Два рази на тиждень по 60 хвилин",
-        icon: "/icon1.png",
+        icon: "/calendar.svg",
     },
     {
         title: "Перший крок безкоштовно",
         description: "Приходьте на пробний урок і відчуйте атмосферу Indigo",
-        icon: "/icon1.png",
+        icon: "/free.svg",
     },
 ];
 
