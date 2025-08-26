@@ -32,7 +32,10 @@ const Navbar = () => {
                 setIsHeaderMenuOpened={setIsHeaderMenuOpened}
             />
 
-            <Menu className="pc:flex pc:gap-5 pc:text-xl hidden font-semibold" />
+            <Menu
+                header
+                className="pc:flex pc:gap-5 pc:text-xl hidden items-center font-semibold"
+            />
         </>
     );
 };

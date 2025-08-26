@@ -5,7 +5,7 @@ export const Hero = () => {
     return (
         <section
             id="hero"
-            className="pc:pt-32 pc:pb-20 bg-hero-bg text-shadow min-h-[calc(100vh-64px)] pt-20 pb-16"
+            className="pc:pt-32 pc:pb-20 bg-hero-bg text-shadow pc:min-h-[calc(100vh-96px)] min-h-[calc(100vh-64px)] pt-20 pb-16"
         >
             <div className="pc:px-10 relative mx-auto max-w-[1440px] px-4">
                 <div className="">
