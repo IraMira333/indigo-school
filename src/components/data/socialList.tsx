@@ -23,7 +23,7 @@ export const socialList = [
             />
         ),
         name: "Telegram",
-        link: "https://t.me/TODO",
+        link: "https://t.me/indigoobolon",
     },
     {
         icon: (
