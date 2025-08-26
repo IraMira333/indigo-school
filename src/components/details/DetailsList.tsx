@@ -44,7 +44,7 @@ export const DetailsList = () => {
             id="course"
             className="pc:pb-16 pc:px-10 overflow-hidden px-4 pb-12"
         >
-            <h2 className="font-montserrat mb-6 max-w-[300px] text-4xl font-semibold">
+            <h2 className="font-montserrat pc:text-5xl pc:max-w-[410px] pc:mb-10 mb-6 max-w-[300px] text-3xl font-semibold">
                 Детальніше про навчання
             </h2>
             <ul className="pc:gap-10 flex flex-wrap justify-center gap-5">

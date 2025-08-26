@@ -35,6 +35,6 @@ export const socialList = [
             />
         ),
         name: "Instagram",
-        link: "https://www.instagram.com/TODO",
+        link: "https://www.instagram.com/indigo.obolon/?igsh=ZTR0aWFxNm81MWZ2",
     },
 ];

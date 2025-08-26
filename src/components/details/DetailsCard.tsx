@@ -14,25 +14,25 @@ export const DetailsCard = ({
 
     return (
         <motion.li
-            className="pc:max-w-[450px] min-h-30 w-full max-w-[750px]"
+            className="pc:max-w-[45%] min-h-30 w-full max-w-[750px]"
             initial={{ opacity: 0, x: fromLeft ? -100 : 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ amount: 0.2 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
         >
-            <div className="mb-3 flex items-center gap-6">
+            <div className="pc:mb-6 mb-3 flex items-center gap-6">
                 <Image
                     src={detail.icon}
                     alt={detail.title}
                     width={240}
                     height={240}
-                    className="pc:h-20 pc:w-20 h-16 w-16"
+                    className="pc:h-16 pc:w-16 h-12 w-12"
                 />
-                <h3 className="font-montserrat text-2xl font-semibold">
+                <h3 className="font-montserrat pc:text-3xl text-xl font-semibold">
                     {detail.title}
                 </h3>
             </div>
-            <p>{detail.description}</p>
+            <p className="pc:text-xl text-sm">{detail.description}</p>
         </motion.li>
     );
 };

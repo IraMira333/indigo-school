@@ -27,7 +27,7 @@ export const MobileMenu = ({
                     onClick={handleMenuClick}
                     className="mt-[65px] flex flex-col items-center gap-6"
                 />
-                <SocialList />
+                <SocialList menu />
             </div>
         </motion.nav>
     );
