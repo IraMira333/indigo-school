@@ -1,5 +1,4 @@
 "use client";
-import axios from "axios";
 import { useState } from "react";
 
 import { FormInModalProps } from "@/types/contentTypes";
@@ -83,32 +82,32 @@ export const AplicationForm = ({ notificationHandler }: FormInModalProps) => {
         e.preventDefault();
         if (!validate()) return;
 
-        const onSendData = async () => {
-            const data = {
-                name: formData.name,
-                phone: formData.phone,
-                age: formData.age,
-            };
+        // const onSendData = async () => {
+        //     const data = {
+        //         name: formData.name,
+        //         phone: formData.phone,
+        //         age: formData.age,
+        //     };
 
-            await axios.post("/api/vacancy", data, {
-                headers: { "Content-Type": "application/json" },
-            });
+        //     await axios.post("/api/vacancy", data, {
+        //         headers: { "Content-Type": "application/json" },
+        //     });
 
-            setFormData({
-                name: "",
-                phone: "",
-                age: "",
-                language: "",
-                online: "",
-                group: "",
-            });
-        };
+        //     setFormData({
+        //         name: "",
+        //         phone: "",
+        //         age: "",
+        //         language: "",
+        //         online: "",
+        //         group: "",
+        //     });
+        // };
 
-        try {
-            await notificationHandler(onSendData);
-        } catch (error) {
-            console.error("Відправка не вдалася:", error);
-        }
+        // try {
+        //     await notificationHandler(onSendData);
+        // } catch (error) {
+        //     console.error("Відправка не вдалася:", error);
+        // }
     };
 
     const inputClass =
