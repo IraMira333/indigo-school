@@ -114,7 +114,8 @@ export const AplicationForm = ({ notificationHandler }: FormInModalProps) => {
         "pc:mt-0 pc:mb-4 text-dark-bg bg-gray-custom placeholder:pc:text-lg pc:text-2xl pc:py-4 placeholder:text-gray-dark-custom border-gray-dark-custom block w-full rounded-xl border px-4 py-3 font-semibold group-focus:outline-none placeholder:text-sm placeholder:uppercase";
     const selectClass =
         "pc:mt-0 pc:mb-4 text-dark-bg bg-gray-custom placeholder:pc:text-lg pc:text-2xl pc:py-4 placeholder:text-gray-dark-custom border-gray-dark-custom  block w-full rounded-xl border px-4 py-3 font-semibold group-focus:outline-none placeholder:text-sm placeholder:uppercase";
-    const errorClass = "text-error absolute bottom-[-20px] left-0 mt-1";
+    const errorClass =
+        "text-error absolute bottom-[-20px] pc:bottom-[-10px] left-0 mt-1";
 
     return (
         <form
