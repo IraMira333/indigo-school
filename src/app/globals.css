@@ -6,14 +6,13 @@
 }
 @theme inline {
     /* 🎨 Кольори */
-    --color-black-custom: #0a0a0a;
     --color-blue-custom: #0d2098;
     --color-blue-light-custom: #b1bbfc;
     --color-light-blue: #929ff4;
     --color-gray-custom: #f5f5f5;
     --color-gray-dark-custom: #4f4f4f;
     --color-white-custom: #ffffff;
-    --color-red-custom: #ff0000;
+    --color-error: #ff0000;
     --color-dark-bg: #1c1c28;
     --color-light-text: #f5f5f5;
     --color-hero-bg: #bbdefb;
@@ -47,3 +46,12 @@ body {
 /* * {
     outline: 1px solid red !important;
 } */
+input,
+textarea,
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    box-shadow: none;
+}

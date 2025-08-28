@@ -6,7 +6,13 @@ import { ModalBase } from "../shared/ModalBase";
 import { DocumentContent } from "./DocumentContent";
 const { title, subtitle, date, points } = privacyPolicyText;
 
-export const PrivacyPolicy = ({ policyButton }: { policyButton: string }) => {
+export const PrivacyPolicy = ({
+    policyButton,
+    form,
+}: {
+    policyButton: string;
+    form?: boolean;
+}) => {
     const [isOpenModal, setIsOpenModal] = useState(false);
 
     const onOpenModal = () => setIsOpenModal(true);
@@ -16,7 +22,7 @@ export const PrivacyPolicy = ({ policyButton }: { policyButton: string }) => {
         <>
             <button
                 onClick={onOpenModal}
-                className="m-0 cursor-pointer text-xs leading-none transition-all duration-500 hover:underline"
+                className={`m-0 cursor-pointer ${form ? "text-sm font-semibold" : "text-xs"} leading-none transition-all duration-500 hover:underline`}
             >
                 {policyButton}
             </button>

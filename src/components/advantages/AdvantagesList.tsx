@@ -27,7 +27,7 @@ export const AdvantagesList = () => {
     return (
         <section
             id="advantages"
-            className="pc:pb-16 pc:px-10 pc:text-xl -mt-6 px-4 pb-12 text-sm"
+            className="pc:pb-16 pc:px-10 pc:text-xl pc:-mt-8 -mt-6 px-4 pb-12 text-sm"
         >
             <ul className="pc:gap-10 flex flex-wrap justify-center gap-5">
                 {advantages.map((adv, index) => (

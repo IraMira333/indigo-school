@@ -11,7 +11,7 @@ export const socialList = [
             />
         ),
         name: "Facebook",
-        link: "https://www.facebook.com/share/TODO",
+        link: "https://www.facebook.com/profile.php?id=61575191665235",
     },
     {
         icon: (

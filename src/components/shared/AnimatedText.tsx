@@ -8,7 +8,7 @@ export const AnimatedText = ({ text }: { text: string }) => {
     let globalIndex = 0;
 
     return (
-        <p className="pc:max-w-[500px] pc:font-semibold pc:text-2xl pc:mb-8 mb-6 flex max-w-[500px] flex-wrap text-[#2C2C2C]">
+        <p className="pc:max-w-[430px] pc:font-semibold pc:text-2xl pc:mb-12 mb-6 flex max-w-[500px] flex-wrap text-[#2C2C2C]">
             {words.map((word, wi) => {
                 const wordSpans = word.split("").map((char, ci) => {
                     const i = globalIndex++;

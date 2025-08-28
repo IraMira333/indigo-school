@@ -1,4 +1,5 @@
 import { AdvantagesList } from "@/components/advantages/AdvantagesList";
+import { Application } from "@/components/application/Aplication";
 import { Article } from "@/components/article/Article";
 import { CTA } from "@/components/CTA/CTA";
 import { article } from "@/components/data/article";
@@ -17,6 +18,7 @@ export default function Home() {
             <Article article={article} />
             <CTA cta={ctaTrial} />
             <WhyList />
+            <Application />
         </>
     );
 }
