@@ -31,7 +31,7 @@ export const AplicationModalWrapper = () => {
                 isModalOpen={isOpen}
                 onCloseModal={() => setIsOpen(false)}
             >
-                <div className="h-auto w-[90%] max-w-[600px] min-w-[288px]">
+                <div className="mx-auto h-auto w-[50%] max-w-[600px] min-w-[288px] pt-12 pb-24">
                     {modalContent}
                 </div>
             </ModalBase>
