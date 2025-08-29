@@ -2,6 +2,7 @@
 import { useState } from "react";
 
 import { FormInModalProps } from "@/types/contentTypes";
+import axios from "axios";
 import { PrivacyPolicy } from "../footer/PrivacyPolicy";
 import { ButtonGet } from "../shared/ButtonGet";
 
@@ -27,6 +28,7 @@ export const AplicationForm = ({ notificationHandler }: FormInModalProps) => {
         online: "",
         group: "",
     });
+    const [loading, setLoading] = useState(false);
     const validate = () => {
         const newErrors: typeof errors = {
             name: "",
@@ -82,38 +84,42 @@ export const AplicationForm = ({ notificationHandler }: FormInModalProps) => {
         e.preventDefault();
         if (!validate()) return;
 
-        // const onSendData = async () => {
-        //     const data = {
-        //         name: formData.name,
-        //         phone: formData.phone,
-        //         age: formData.age,
-        //     };
+        const onSendData = async () => {
+            const data = {
+                name: formData.name,
+                phone: formData.phone,
+                age: formData.age,
+                group: formData.group,
+                online: formData.online,
+                language: formData.language,
+            };
 
-        //     await axios.post("/api/vacancy", data, {
-        //         headers: { "Content-Type": "application/json" },
-        //     });
+            await axios.post("/api/application", data, {
+                headers: { "Content-Type": "application/json" },
+            });
 
-        //     setFormData({
-        //         name: "",
-        //         phone: "",
-        //         age: "",
-        //         language: "",
-        //         online: "",
-        //         group: "",
-        //     });
-        // };
+            setFormData({
+                name: "",
+                phone: "",
+                age: "",
+                language: "",
+                online: "",
+                group: "",
+            });
+        };
 
-        // try {
-        //     await notificationHandler(onSendData);
-        // } catch (error) {
-        //     console.error("Відправка не вдалася:", error);
-        // }
+        try {
+            setLoading(true);
+            await notificationHandler(onSendData);
+        } catch (error) {
+            console.error("Відправка не вдалася:", error);
+        } finally {
+            setLoading(false);
+        }
     };
 
     const inputClass =
         "pc:mt-0 pc:mb-4 text-dark-bg bg-gray-custom placeholder:pc:text-lg pc:text-2xl pc:py-4 placeholder:text-gray-dark-custom border-gray-dark-custom block w-full rounded-xl border px-4 py-3 font-semibold group-focus:outline-none placeholder:text-sm placeholder:uppercase";
-    const selectClass =
-        "pc:mt-0 pc:mb-4 text-dark-bg bg-gray-custom placeholder:pc:text-lg pc:text-2xl pc:py-4 placeholder:text-gray-dark-custom border-gray-dark-custom  block w-full rounded-xl border px-4 py-3 font-semibold group-focus:outline-none placeholder:text-sm placeholder:uppercase";
     const errorClass =
         "text-error absolute bottom-[-20px] pc:bottom-[-10px] left-0 mt-1";
 
@@ -185,7 +191,7 @@ export const AplicationForm = ({ notificationHandler }: FormInModalProps) => {
                     onChange={e =>
                         setFormData({ ...formData, language: e.target.value })
                     }
-                    className={selectClass}
+                    className={inputClass}
                 >
                     <option value="" disabled></option>
 
@@ -193,11 +199,11 @@ export const AplicationForm = ({ notificationHandler }: FormInModalProps) => {
                     <option value="німецька">Німецька</option>
                 </select>
                 {formData.language === "" && (
-                    <span className="text-gray-dark-custom pc:text-lg pointer-events-none absolute top-1/2 left-4 -translate-y-1/2 text-sm font-semibold uppercase">
+                    <span className="text-gray-dark-custom pc:text-lg pc:top-5 pointer-events-none absolute top-4 left-4 text-sm font-semibold uppercase">
                         Оберіть мову навчання*
                     </span>
                 )}
-                <span className="text-gray-dark-custom pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                <span className="text-gray-dark-custom pc:top-5 pointer-events-none absolute top-4 right-4 flex items-center">
                     ▼
                 </span>
                 {errors.language && (
@@ -214,18 +220,18 @@ export const AplicationForm = ({ notificationHandler }: FormInModalProps) => {
                     onChange={e =>
                         setFormData({ ...formData, online: e.target.value })
                     }
-                    className={selectClass}
+                    className={inputClass}
                 >
                     <option value="" disabled></option>
                     <option value="онлайн">Онлайн</option>
                     <option value="офлайн">Офлайн</option>
                 </select>
                 {formData.online === "" && (
-                    <span className="text-gray-dark-custom pc:text-lg pointer-events-none absolute top-1/2 left-4 -translate-y-1/2 text-sm font-semibold uppercase">
+                    <span className="text-gray-dark-custom pc:text-lg pc:top-5 pointer-events-none absolute top-4 left-4 text-sm font-semibold uppercase">
                         Оберіть формат навчання*
                     </span>
                 )}
-                <span className="text-gray-dark-custom pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                <span className="text-gray-dark-custom pc:top-5 pointer-events-none absolute top-4 right-4 flex items-center">
                     ▼
                 </span>
                 {errors.online && <p className={errorClass}>{errors.online}</p>}
@@ -240,18 +246,18 @@ export const AplicationForm = ({ notificationHandler }: FormInModalProps) => {
                     onChange={e =>
                         setFormData({ ...formData, group: e.target.value })
                     }
-                    className={selectClass}
+                    className={inputClass}
                 >
                     <option value="" disabled></option>
                     <option value="групова">Групова</option>
                     <option value="індивідуальна">Індивідуальна</option>
                 </select>
                 {formData.group === "" && (
-                    <span className="text-gray-dark-custom pc:text-lg pointer-events-none absolute top-1/2 left-4 -translate-y-1/2 text-sm font-semibold uppercase">
+                    <span className="text-gray-dark-custom pc:text-lg pc:top-5 pointer-events-none absolute top-4 left-4 text-sm font-semibold uppercase">
                         Оберіть форму навчання*
                     </span>
                 )}
-                <span className="text-gray-dark-custom pointer-events-none absolute inset-y-0 right-4 flex items-center">
+                <span className="text-gray-dark-custom pc:top-5 pointer-events-none absolute top-4 right-4 flex items-center">
                     ▼
                 </span>
                 {errors.group && <p className={errorClass}>{errors.group}</p>}
@@ -274,7 +280,7 @@ export const AplicationForm = ({ notificationHandler }: FormInModalProps) => {
                 </div>
 
                 <div className="flex justify-center">
-                    <ButtonGet type="submit" />
+                    <ButtonGet loading={loading} type="submit" />
                 </div>
             </div>
         </form>
