@@ -8,7 +8,7 @@ const advantages = [
     },
     {
         title: "Формат для кожного",
-        description: "Індивідуально або у міні-групі до 10 людей",
+        description: "Індивідуально або в смарт-групі до 10 учнів",
         icon: "/everyone.svg",
     },
     {
