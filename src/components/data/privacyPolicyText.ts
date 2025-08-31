@@ -1,7 +1,7 @@
 import { DocumentType } from "@/types/contentTypes";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE || "http://localhost:3001";
-const email = "TODO@gmail.com";
+const email = "indigo.school.obolon@gmail.com";
 
 export const privacyPolicyText: DocumentType = {
     title: "Політика конфіденційності та обробки персональних даних",

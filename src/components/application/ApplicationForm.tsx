@@ -9,6 +9,7 @@ import { ButtonGet } from "../shared/ButtonGet";
 const nameRegex =
     /^(?=(.*\S.*\S))[^\-\s][a-zA-ZąćęłńóśźżĄĆĘŁŃÓŚŹŻіІїЇґҐєЄа-яА-Я'"`\-\sʼ’]+$/;
 const numberRegex = /^[0-9]+$/;
+const phoneRegex = /^\+?380\d{9}$/;
 
 export const AplicationForm = ({ notificationHandler }: FormInModalProps) => {
     const [formData, setFormData] = useState({
@@ -29,6 +30,7 @@ export const AplicationForm = ({ notificationHandler }: FormInModalProps) => {
         group: "",
     });
     const [loading, setLoading] = useState(false);
+    const [focused, setFocused] = useState(false);
     const validate = () => {
         const newErrors: typeof errors = {
             name: "",
@@ -52,8 +54,8 @@ export const AplicationForm = ({ notificationHandler }: FormInModalProps) => {
         if (!formData.phone.trim()) {
             newErrors.phone = "Введіть номер телефону";
             valid = false;
-        } else if (!numberRegex.test(formData.phone)) {
-            newErrors.phone = "Допускаються лише цифри";
+        } else if (!phoneRegex.test(formData.phone)) {
+            newErrors.phone = "Має бути 380ХХХХХХХХХХ (12 цифр)";
             valid = false;
         }
 
@@ -153,8 +155,10 @@ export const AplicationForm = ({ notificationHandler }: FormInModalProps) => {
                 <input
                     type="tel"
                     id="phone"
-                    placeholder="Номер телефону*"
+                    placeholder={focused ? "380XXXXXXXXX" : "Номер телефону*"}
                     value={formData.phone}
+                    onFocus={() => setFocused(true)}
+                    onBlurCapture={() => setFocused(false)}
                     onChange={e =>
                         setFormData({ ...formData, phone: e.target.value })
                     }
