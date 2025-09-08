@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://https://indigo-school-obolon.vercel.app/sitemap.xml
+Sitemap: https://indigo-school-obolon.vercel.app/sitemap.xml
