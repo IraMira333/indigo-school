@@ -21,7 +21,7 @@ export const Hero = () => {
                 </div>
                 <div className="pc:max-w-[54%] mt-6 mr-0 ml-auto max-w-[500px]">
                     <Image
-                        src="/hero.png"
+                        src="/discount.jpg"
                         alt="Indigo School"
                         width={1000}
                         height={500}
