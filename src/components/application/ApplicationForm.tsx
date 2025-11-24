@@ -201,6 +201,7 @@ export const AplicationForm = ({ notificationHandler }: FormInModalProps) => {
 
                     <option value="англійська">Англійська</option>
                     <option value="німецька">Німецька</option>
+                    <option value="корейська">Корейська</option>
                 </select>
                 {formData.language === "" && (
                     <span className="text-gray-dark-custom pc:text-lg pc:top-5 pointer-events-none absolute top-4 left-4 text-sm font-semibold uppercase">
