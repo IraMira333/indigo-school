@@ -10,6 +10,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@next/third-parties": "^16.0.3",
     "axios": "^1.11.0",
     "framer-motion": "^12.23.12",
     "googleapis": "^158.0.0",

@@ -1,5 +1,6 @@
 import { Footer } from "@/components/footer/Footer";
 import { Header } from "@/components/header/Header";
+import { GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Montserrat, Open_Sans } from "next/font/google";
 import "./globals.css";
@@ -41,6 +42,7 @@ export default function RootLayout({
                     content="/opengraph.jpg"
                 />
                 <meta name="twitter:image" content="/opengraph.jpg" />
+                <GoogleTagManager gtmId="GTM-5LQHFC33" />
             </head>
             <body className={`${montserrat.variable} ${open.variable} `}>
                 <Header />
